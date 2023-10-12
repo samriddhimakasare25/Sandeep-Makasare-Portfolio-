@@ -114,3 +114,6 @@ nav ul li a:hover::after{
     order: 2;
     text-align: left;
 }
+.sub-title{
+    font-size: 60px;
+}
