@@ -11,7 +11,7 @@ body{
 #header{
     width:100%;
     height: 100vh;
-    background-image: url(images/sandeep.png);
+    background-image: url(images/sandeep1.png);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -63,8 +63,8 @@ nav ul li a:hover::after{
     width:100%;
 }
 .header-text {
-    float: right; /* Align to the right side */
-    text-align: right; /* Align text to the right within the block */
+    float: left; /* Align to the right side */
+    text-align: left; /* Align text to the right within the block */
     max-width: 50%; /* Adjust the width as needed */
     padding: 10px; /* Add padding as needed */
     box-sizing: border-box;
@@ -74,9 +74,42 @@ nav ul li a:hover::after{
 .header-text p {
     margin-top: 20%;
     font-size: 30px;
+
 }
 
 .header-text h1 {
     font-size: 60px;
     margin-top: 20px;
+}
+.header-text h1 span{
+    color: goldenrod;
+}
+/* ---------about-----------*/
+#about{
+    padding: 80px 0;
+    color: whitesmoke;
+    text-align: left;
+    
+}
+
+.about-col-1 img {
+    flex-basis: 35% ;
+    margin-left: 70px; /* You can adjust this value to move the image as desired */
+}
+.about-col-1 img {
+      width: 100%;
+    border-radius: 15px;
+    margin-right: 70px;
+    border: 6px solid goldenrod; 
+}
+.row{
+    display:flex ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-2{
+    flex-basis:60%;
+    order: -2;
+    text-align: right;
+    
 }
