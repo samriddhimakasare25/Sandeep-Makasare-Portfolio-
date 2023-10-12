@@ -95,12 +95,14 @@ nav ul li a:hover::after{
 .about-col-1 img {
     flex-basis: 35% ;
     margin-left: 70px; /* You can adjust this value to move the image as desired */
-}
-.about-col-1 img {
-      width: 100%;
+    width: 100%;
     border-radius: 15px;
     margin-right: 70px;
     border: 6px solid goldenrod; 
+}
+.about-col-1 {
+    flex-basis: 35%;
+    order: 1; /* Set the order to 1 to place it on the left */
 }
 .row{
     display:flex ;
@@ -109,7 +111,6 @@ nav ul li a:hover::after{
 }
 .about-col-2{
     flex-basis:60%;
-    order: -2;
-    text-align: right;
-    
+    order: 2;
+    text-align: left;
 }
