@@ -43,18 +43,18 @@
                 Let's connect and explore opportunities for collaboration and growth!</p>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link"> Skills</p>
-                    <p class="tab-links"> Experience</p>
-                    <p class="tab-links"> Education</p>
+                    <p class="tab-links active-link"onclick="opentab('skills')"> Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')"> Experience</p>
+                    <p class="tab-links"onclick="opentab('education')"> Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Instructor</span><br> Attention to detail</li>
                         <li><span>Management</span><br>Customer Service and Guest Relations</li>
                         <li><span>Leadership </span><br>Team-Building</li>
                     </ul>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents" id="experience">
                     <ul>
                         <li><span>Director of Culinary services </span><br>Amica Senior Lifestyle</li>
                         <li><span>Professor</span><br>Hanson Canada</li>
@@ -63,7 +63,7 @@
                         <li><span>Instructor</span><br> Liaison College of Culinary Arts</li>
                     </ul>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents" id="education">
                     <ul>
                         <li><span>Bharati Vidyapeeth </span><br>BHMCT, Hotel Management and Catering</li>
                         <li><span>Yashwantrao Chavan Maharashtra Open University </span><br> Master in hotel management and catering management </li>
@@ -75,6 +75,23 @@
     </div>  
 </div>
 
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
 
+    function opentab(tabname) {
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active-link");
+        }
+        for (var i = 0; i < tabcontents.length; i++) {
+            tabcontents[i].classList.remove("active-tab");
+        }
+
+        // Add the "active-link" class to the selected tab link
+        document.querySelector('.tab-links[data-tab="' + tabname + '"]').classList.add("active-link");
+        // Add the "active-tab" class to the selected tab content
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </body>
 </html>
