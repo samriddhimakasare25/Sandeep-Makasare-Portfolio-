@@ -9,11 +9,12 @@ body{
     color: #fff;
 }
 #header{
-    width: 780px;
-    height: 780px;
-    background-image: url(images/pictures-removebg-preview.png);
-    background-size: cover;
-    background-position: center;
+    width:100%;
+    height: 100vh;
+    background-image: url(images/sandeep.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 
 }
 .container{
@@ -26,16 +27,56 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-left: auto;
 }
 
 .logo {
     height: auto; 
-    max-width: 28%;
+    max-width: 20%;
     }
 
 nav ul li{
     
-    display:inline-block;
+    display:inline;
     list-style: none;
     margin: 10px 10px;
+}
+
+nav ul li a{
+    color : darkgoldenrod;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: lightpink;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+.header-text {
+    float: right; /* Align to the right side */
+    text-align: right; /* Align text to the right within the block */
+    max-width: 50%; /* Adjust the width as needed */
+    padding: 10px; /* Add padding as needed */
+    box-sizing: border-box;
+}
+
+/* Style for the text */
+.header-text p {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
 }
