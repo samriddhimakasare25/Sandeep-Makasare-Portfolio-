@@ -177,7 +177,7 @@ nav ul li a:hover::after{
 /*-------services-------*/
 
 #services{
-     padding: -0px 80px;
+     padding: 0 80px;
 
 }
 
@@ -194,6 +194,8 @@ nav ul li a:hover::after{
     font-size: 15px;
     font-weight: 300;
     border-radius: 10px;
+    border-right: 10px;
+    transition:background 0.5,transform 0.5s;
 }
 .services-list div i{
     font-size: 50px;
@@ -207,10 +209,16 @@ nav ul li a:hover::after{
 }
 .services-list div a{
     text-decoration: none;
-    color: purple;
+    color: whitesmoke;
     font-size: 14px;
     margin-top:20px;
     display: inline-block;
     font-weight: 400;
  
+}
+
+.services-list div:hover{
+    background: goldenrod;
+    transform: translateY(-10px);
+
 }
