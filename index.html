@@ -6,6 +6,15 @@
     <title> Sandeep Makasare Portfolio</title>
     <link rel="stylesheet" href="style.css" >
     <script src="https://kit.fontawesome.com/d089302578.js" crossorigin="anonymous"></script>
+    <style>
+        .initial-work {
+            display: none; /* Hide initially */
+        }
+
+        .work.hidden {
+            display: none; /* Hide additional works initially */
+        }
+    </style>
 </head>
 <body>
  <div id="header">
@@ -115,7 +124,6 @@
 
 <!---------portfolio--------->
 <div id="portfolio">
-
     <div class="container">
         <h1 class="sub-title"> My Work</h1>
         <div class="work-list">
@@ -160,18 +168,20 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/image5.jpeg">
-                <div class="layer">
-                    <h3>Crostini</h3>
-                    <p>Sandeep's delectable crostini combines the creamy allure of feta and goat
-                         cheese with the sweet, juicy elegance of ripe pears. Drizzled with a rich,
-                          tangy balsamic dressing, each bite is a harmonious symphony of flavors 
-                          that dance on your taste buds. Irresistible, elegant, and simply divine.</p>
-                          <a href="#"><i class="fas fa-arrow-right"></i></a>
+            <div class="initial-work">
+                <div class="work">
+                    <img src="images/image5.jpeg">
+                    <div class="layer">
+                        <h3>Crostini</h3>
+                        <p>Sandeep's delectable crostini combines the creamy allure of feta and goat
+                             cheese with the sweet, juicy elegance of ripe pears. Drizzled with a rich,
+                              tangy balsamic dressing, each bite is a harmonious symphony of flavors 
+                              that dance on your taste buds. Irresistible, elegant, and simply divine.</p>
+                        <a href="#"><i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image6.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -182,7 +192,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image7.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -193,7 +203,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image9.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -204,7 +214,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image10.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -215,7 +225,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image11.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -226,7 +236,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image12.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -237,7 +247,7 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="work">
+            <div class="work hidden">
                 <img src="images/image13.jpeg">
                 <div class="layer">
                     <h3>Crostini</h3>
@@ -248,6 +258,10 @@
                           <a href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
+            <div class="show-more-button">
+                <button id="show-more">Show More Images</button>
+            </div>
+    
         </div>
     </div>
 </div>
@@ -266,9 +280,44 @@
          tabcontent.classList.remove("active-tab");
       }
       event.currentTarget.classList.add("active-link");
-      document.getElementById(tabname).classList.add("active-tab");
-      
+      document.getElementById(tabname).classList.add("active-tab");  
     }
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname) {
+        for (var tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (var tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var showMoreButton = document.getElementById("show-more");
+    var initialWork = document.querySelector(".initial-work");
+    var hiddenWorks = document.querySelectorAll(".work.hidden");
+
+    showMoreButton.addEventListener("click", function () {
+        // Toggle the visibility of the initial works and additional works
+        if (initialWork.style.display === "none") {
+            initialWork.style.display = "block";
+            hiddenWorks.forEach(function (work) {
+                work.style.display = "block";
+            });
+            showMoreButton.textContent = "Show Fewer Images"; // Change the button text
+        } else {
+            initialWork.style.display = "none";
+            hiddenWorks.forEach(function (work) {
+                work.style.display = "none";
+            });
+            showMoreButton.textContent = "Show More Images"; // Change the button text
+        }
+    });
+    
 </script>
 </body>
 </html>
