@@ -1,0 +1,391 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif ;
+    box-sizing: border-box;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+#header{
+    width:100%;
+    height: 100vh;
+    background-image: url(images/sandeep1.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.container{
+
+    padding: 10px, 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.logo {
+    height: auto; 
+    max-width: 20%;
+    }
+
+nav ul li{
+    
+    display:inline;
+    list-style: none;
+    margin: 10px 10px;
+}
+
+nav ul li a{
+    color : darkgoldenrod;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: lightpink;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+.header-text {
+    float: left; /* Align to the right side */
+    text-align: left; /* Align text to the right within the block */
+    max-width: 50%; /* Adjust the width as needed */
+    padding: 10px; /* Add padding as needed */
+    box-sizing: border-box;
+}
+
+/* Style for the text */
+.header-text p {
+    margin-top: 20%;
+    font-size: 30px;
+
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: goldenrod;
+}
+/* ---------about-----------*/
+#about{
+    padding: 80px 0;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 20px; 
+}
+
+.about-col-1 img {
+    flex-basis: 35% ;
+    margin-left: 70px; /* You can adjust this value to move the image as desired */
+    width: 100%;
+    border-radius: 15px;
+    margin-right: 70px;
+    border: 6px solid goldenrod; 
+}
+.about-col-1 {
+    flex-basis: 35%;
+    order: 1; /* Set the order to 1 to place it on the left */
+}
+.row{
+    display:flex ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-2{
+    flex-basis:60%;
+    order: 2;
+    text-align: left;
+    padding-left: 20px;
+}
+.sub-title{
+    font-size: 40px;
+    font-weight: 600;
+    color: goldenrod;
+    font-style: italic;
+    margin-left: 20px; 
+}
+.about-col-2 p {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-top: 10px; /* Adjust the top margin to align with the "About Me" text */
+    text-align: left; /* Align the text to the left */
+    padding-left: 20px; 
+    padding-right:10px;/* Add left padding as needed */
+    color:beige;
+    font-style: oblique;
+}
+.tab-titles{
+    display:flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content:'';
+    width:0;
+    height: 3px;
+    background-color: pink;
+    position: absolute;
+    left:0;
+    bottom:-8px;
+    transition:0.5s ;
+}
+.tab-links.active-link::after{
+    width:50%; 
+}
+.tab-contents ul li{
+    list-style:none;
+    margin-left: 60px;
+    margin: 10px 0;
+
+}
+
+.tab-contents ul span{
+    color:goldenrod;
+    font-size: 14 px;
+}
+
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display:block ;
+}
+
+/*-------services-------*/
+
+#services{
+     padding: 0 80px;
+
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div{
+    background: rgb(195, 112, 126);
+    padding: 40px;
+    font-size: 15px;
+    font-weight: 300;
+    border-radius: 10px;
+    border-right: 10px;
+    transition:background 0.5,transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    
+}
+.services-list div h2{
+     font-size: 30px;
+     font-weight: 500;
+     margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 14px;
+    margin-top:20px;
+    display: inline-block;
+    font-weight: 400;
+ 
+}
+
+.services-list div:hover{
+    background: goldenrod;
+    transform: translateY(-10px);
+
+}
+/*--------portfolio------*/
+#portfolio{
+    padding:50px 71px;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    
+
+}
+.work {
+    border-radius: 10px;
+    position: relative;
+    width: 300px; /* Set your desired width */
+    height: 350px; /* Set your desired height */
+    overflow: hidden; /* Hide overflowing content if the images are larger */
+}
+.work img {
+    width: 100%; /* Make the image take up the full width of the container */
+    height: auto; /* Maintain the image's aspect ratio */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer {
+    position: absolute;
+    top: 100%; /* Initially position it at the bottom */
+    left: 0;
+    width: 100%;
+    height: 0; /* Set initial height to 0 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s, height 0.5s;
+}
+
+.work:hover .layer {
+    opacity: 1;
+    height: 100%;
+    top: 0;
+}
+
+.layer h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.layer p {
+    color: white;
+    font-size: 16px;
+    margin: 0 20px;
+}
+
+.layer a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.layer a i {
+    margin-right: 5px;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.initial-work {
+    display: none; /* Hide initially */
+ }
+ 
+ .work.hidden {
+    display: none; /* Hide additional works initially */
+ }
+
+ .show-more-button {
+    text-align: left;
+    margin-top: 20px;
+    
+}
+
+#show-more {
+    background-color: red; /* Set the background color to red */
+    color: white; /* Set the text color to white */
+    padding: 10px 20px; /* Increase padding for button size */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#show-more:hover {
+    background-color: darkred;
+}
+/*------------contact----------*/
+
+#contact {
+    background-color: palevioletred; /* Choose your preferred background color */
+    padding: 20px;
+}
+
+.contact-left{
+    text-align: center;
+    margin-left: 45px;
+    color: #080808;
+
+}
+
+.contact-right {
+    margin-bottom: 20px; /* Add some space between the sections */
+}
+
+.social-icons a {
+    font-size: 80px;
+    margin-right: 10px;
+    color: white;
+}
+
+.social-icons a:hover {
+    color: goldenrod; /* Change color on hover */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Adjust form width */
+    margin: 0 auto; /* Center the form */
+}
+
+input, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid pink;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: darkred;
+}
+.contact-left p {
+    margin-bottom: 10px;
+}
+form input, form textarea {
+    width: 100%; /* Make input fields take full width */
+}
+.sub-title {
+    font-size: 24px;
+    color: gol; /* Choose your preferred text color */
+    margin-bottom: 10px;
+}
